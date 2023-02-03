@@ -1,0 +1,374 @@
+/****** Variables *****/
+
+$primary: #9356DC;
+$primary2: #F5EDFF;
+$secondary: #FF79DA;
+$darkBlue: #003A68;
+$blue: #89C8FA;
+$green:#008766;
+$lightgreen: #99E2D0;
+$grey:#EAEAEA;
+$lightgrey: #D2D2D2;
+$darkWhite: #F6F6F6;
+$lightblack: #353535;
+$gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+/***********************************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family:'Roboto';
+    color: $lightblack;
+    display: flex;
+    justify-content: center;
+
+    h1,h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #000000;
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
+    .ctn {
+    width: 100%;
+    }
+
+    section {
+        margin-bottom: 70px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+}
+
+
+
+/* Header */
+
+header {
+    height: 113px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+    .logo {
+        height: 49px;
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+        
+        img {
+            height: 30px;
+            width: 162px;
+        }
+    }
+
+    .paris {
+        height: 50px;
+        width: 100%;
+        background-color: $grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+
+        p {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            justify-content: center;
+            margin-left: 17px;
+        }
+    }
+}
+
+/************ Main ************/
+.test {
+    background-color:red !important;
+}
+
+.testt {
+    background-color:#89C8FA;
+
+}
+/* Intro */
+
+.intro {
+    height: 287px; 
+    text-align: center;
+    background-color: $darkWhite;
+    padding: 39px 20px 57px 20px;
+    
+    h1 {
+        margin: 0 58px 10px 42px ;
+    }
+
+    p {
+        margin-bottom: 27px;
+    }
+
+    .btn {
+        font-family:'Roboto';
+        font-weight: 500;
+        font-size: 16px;
+        color: white;
+        height: 50px;
+        width: 218px;
+        border-radius: 25px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, .5);
+        border: none;
+        background: $gradient;
+
+       &:hover {
+        background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+            box-shadow: 0px 5px 15px rgba(0,0,0, 0.5);
+        }
+    }
+}
+
+/* Fonctionnement */
+
+.fonctionnement {
+    width: 100%;
+    padding: 0 20px;
+
+
+    .list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+
+        .steps {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 72px;
+            margin-top: 25px;
+            align-items: center;
+
+            .number {
+                border-radius: 55px;
+                height: 25px; padding: 0 8px;
+                font-size: 14px;
+                color: white;
+                background-color: $primary;
+                position: relative;
+                left: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;
+                
+            }
+            .consigne {
+                z-index: 0;
+                background-color: $darkWhite;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 72px;
+                padding: 0 33px;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                border-radius: 20px;
+
+                p{
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .special {
+                z-index: 0;
+                background-color: $primary2;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 72px;
+                padding: 0 33px;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                border-radius: 20px;
+               
+                i {
+                    color: $primary;
+                }
+
+                p{
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+/* Restaurants */
+
+.restaurants {
+    background-color: $darkWhite;
+    padding: 54px 17px;
+    margin-bottom: 0px;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            height: 251px;
+            width: 100%;
+            margin-top: 18px;
+
+            article {
+                background-color: white;
+                width: 100%;
+                height: 251px;
+                border-radius: 15px;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                z-index: 0;
+                position: relative;
+
+                .new {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    padding: 7px 9px;
+                    background-color: $lightgreen;
+                    color: $green;
+                    font-size: 14px;
+                    font-weight: 500;
+                    border-radius: 2px;
+                    z-index: 1;
+                }
+
+                img {
+                    background-position: center;
+                    border-radius: 15px 15px 0 0;
+                    object-fit: cover;
+                    height: 174px;
+                    width: 100%;
+                }
+
+                .card {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 16px 25px 12px 13px;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    div {
+
+                        h3 {
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+                        p {
+                            font-size: 17px;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/********** Footer **********/
+footer {
+    background-color: $lightblack;
+    padding: 22px 25px;
+    
+
+    .shrikhand {
+        font-family: 'Shrikhand';
+        margin-bottom: 9px;
+        color:white;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column; 
+        
+
+        a {
+            margin-top: 7px;
+            color:white;
+            font-weight: 400;
+        }
+    }
+}
+
+/************ mixin & functions ******************/
+
+@media  screen and (min-width: 1000px) {
+
+    .ctn {
+        max-width: 1400px;
+    }
+
+    .fonctionnement {   
+        display: flex;
+        justify-content: center;
+
+
+
+        .list {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .restaurants {
+        display: flex;
+        justify-content: center;
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+
+            a {
+                width: 23%;
+            }
+        }
+    }
+    
+    footer {
+        .ctn {
+        display: flex;
+        flex-direction: row-reverse;  
+        padding: 40px 80px; 
+        }
+        
+       
+        div {
+            flex-direction: row;
+            padding-right: 70px;
+
+            a {
+                padding-right: 70px;
+            }
+        }
+    }
+}

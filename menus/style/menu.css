@@ -13,10 +13,17 @@ body {
   display: flex;
   justify-content: center;
 }
-body h1, body h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #000000;
+body h1 {
+  font-family: "Shrikhand";
+  font-size: 28px;
+}
+body h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom: solid 3px #99E2D0;
+  padding-bottom: 5px;
+  width: 40px;
 }
 body p {
   font-size: 18px;
@@ -27,9 +34,6 @@ body .wrapper {
 }
 body .ctn {
   width: 100%;
-}
-body section {
-  margin-bottom: 70px;
 }
 body a {
   text-decoration: none;
@@ -53,20 +57,45 @@ header a {
   top: 26px;
 }
 header img {
-  height: 32px;
+  height: 30px;
+  width: 162px;
 }
 
-.bgpage {
+.bg {
   height: 275px;
   width: 100%;
   background-position: center;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: -1;
 }
 
 .menu {
-  height: 1000px;
+  width: 100%;
+  position: absolute;
+  top: 283px;
   background-color: #F6F6F6;
+  border-radius: 40px 40px 0px 0px;
+}
+.menu .title {
+  padding: 32px 40px 2px 17px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu .container {
+  width: 100%;
+  padding: 0 13px;
+  margin-top: 40px;
+}
+.menu .container .card {
+  width: 100%;
+  background-color: white;
+  padding: 13px 13px;
+  margin-top: 14px;
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  border-radius: 15.0431px;
 }
 
 /************ Main ************/
@@ -78,7 +107,12 @@ header img {
   background-color: #89C8FA;
 }
 
-.btn {
+.secbtn {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+.secbtn .btn {
   font-family: "Roboto";
   font-weight: 500;
   font-size: 16px;
@@ -90,7 +124,7 @@ header img {
   border: none;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
 }
-.btn:hover {
+.secbtn .btn:hover {
   background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
@@ -99,6 +133,7 @@ header img {
 footer {
   background-color: #353535;
   padding: 22px 25px;
+  width: 100%;
 }
 footer .shrikhand {
   font-family: "Shrikhand";
