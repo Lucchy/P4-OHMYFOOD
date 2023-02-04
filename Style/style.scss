@@ -267,6 +267,17 @@ header {
                     width: 100%;
                 }
 
+                .fa-heart {
+                    font-weight: 0;
+                    color: black;
+                    transition: font-weight 900ms, color 900ms;
+                    
+                    &:hover {
+                        font-weight: bold;
+                        color: $secondary
+                    }
+                }
+
                 .card {
                     display: flex;
                     flex-direction: row;
@@ -350,7 +361,7 @@ footer {
 
             a {
                 width: 23%;
-            }
+            }   
         }
     }
     

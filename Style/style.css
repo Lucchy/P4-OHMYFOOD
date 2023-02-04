@@ -223,6 +223,15 @@ header .paris p {
   height: 174px;
   width: 100%;
 }
+.restaurants .container a article .fa-heart {
+  font-weight: 0;
+  color: black;
+  transition: font-weight 900ms, color 900ms;
+}
+.restaurants .container a article .fa-heart:hover {
+  font-weight: bold;
+  color: #FF79DA;
+}
 .restaurants .container a article .card {
   display: flex;
   flex-direction: row;
