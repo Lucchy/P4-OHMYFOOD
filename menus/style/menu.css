@@ -89,13 +89,58 @@ header img {
   padding: 0 13px;
   margin-top: 40px;
 }
-.menu .container .card {
+.menu .container .dish {
+  display: flex;
+  flex-direction: row;
   width: 100%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.menu .container .dish .card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: white;
   padding: 13px 13px;
   margin-top: 14px;
-  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
-  border-radius: 15.0431px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.menu .container .dish .card .card-txt {
+  width: 100%;
+}
+.menu .container .dish .card .card-txt .sub {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  transition: width 0.4s;
+}
+.menu .container .dish .card .card-txt .sub .bold {
+  font-weight: 700;
+}
+.menu .container .dish .coche {
+  background-color: #99E2D0;
+  position: absolute;
+  right: -60px;
+  height: 69px;
+  padding: 25px 15px;
+  margin-top: 14px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0 15px 15px 0;
+  transition: transform 0.4s;
+}
+.menu .container .dish .coche .fa-circle-check {
+  color: white;
+}
+.menu .container .dish:hover .card .card-txt .sub {
+  width: 88%;
+}
+.menu .container .dish:hover .coche {
+  transform: translateX(-60px);
 }
 
 /************ Main ************/
@@ -122,10 +167,10 @@ header img {
   border-radius: 25px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   border: none;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #FF79DA -5.2%, #9356DC 110.74%);
 }
 .secbtn .btn:hover {
-  background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  background: linear-gradient(200.64deg, #FF79DA -5.2%, #9356DC 110.74%);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
 

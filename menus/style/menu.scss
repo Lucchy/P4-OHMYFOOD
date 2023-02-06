@@ -11,7 +11,7 @@ $grey:#EAEAEA;
 $lightgrey: #D2D2D2;
 $darkWhite: #F6F6F6;
 $lightblack: #353535;
-$gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+$gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #FF79DA -5.2%, #9356DC  110.74%);
 /***********************************/
 
 * {
@@ -111,22 +111,85 @@ header {
         align-items: center;
         justify-content: space-between;
     }
+    
     .container {
         width: 100%;
         padding: 0 13px;
         margin-top: 40px;
-        
-        .card {
+
+
+
+        .dish {
+            display: flex;
+            flex-direction: row;
             width: 100%;
-            background-color: white;
-            padding: 13px 13px;
-            margin-top: 14px;
-            box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
-            border-radius: 15.0431px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+
+
+            .card {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: white;
+                padding: 13px 13px;
+                margin-top: 14px;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                border-radius: 15px; 
+                
+                .card-txt {
+                    width: 100%;
+
+                    .sub {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        transition: width 0.4s;
+        
+                        .bold {
+                            font-weight: 700;
+                        }
+                    } 
+                }
+    
+            }
+    
+            .coche {
+                background-color: $lightgreen;
+                position: absolute;
+                right: -60px;
+                height: 69px;
+                padding: 25px 15px;
+                margin-top: 14px;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                border-radius: 0 15px 15px 0;
+                transition: transform 0.4s;
+
+                .fa-circle-check {
+                    color: white;
+                }
+            }
+           
+            &:hover {
+                .card {
+                    .card-txt {
+                        .sub {
+                            width: 88%;
+                        }
+                    }
+                }
+                .coche {
+                    transform: translateX(-60px);
+                }
+
+            }
         }
-    }
-    
-    
+        
+    } 
 }
 
 
@@ -161,7 +224,7 @@ header {
         background: $gradient;
 
        &:hover {
-        background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+        background: linear-gradient(200.64deg, #FF79DA -5.2%, #9356DC  110.74%);
             box-shadow: 0px 5px 15px rgba(0,0,0, 0.5);
         }
     }
