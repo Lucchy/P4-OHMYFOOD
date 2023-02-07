@@ -64,6 +64,8 @@ header img {
 .bg {
   height: 275px;
   width: 100%;
+  position: absolute;
+  top: 63px;
   background-position: center;
   -o-object-fit: cover;
      object-fit: cover;
@@ -71,9 +73,9 @@ header img {
 }
 
 .menu {
-  width: 100%;
   position: absolute;
   top: 283px;
+  width: 100%;
   background-color: #F6F6F6;
   border-radius: 40px 40px 0px 0px;
 }
@@ -83,6 +85,15 @@ header img {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.menu .title .fa-heart {
+  font-weight: 0;
+  color: black;
+  transition: font-weight 900ms, color 900ms;
+}
+.menu .title .fa-heart:hover {
+  font-weight: bold;
+  color: #9356DC;
 }
 .menu .container {
   width: 100%;
@@ -137,7 +148,7 @@ header img {
   color: white;
 }
 .menu .container .dish:hover .card .card-txt .sub {
-  width: 88%;
+  width: 80%;
 }
 .menu .container .dish:hover .coche {
   transform: translateX(-60px);
@@ -155,7 +166,7 @@ header img {
 .secbtn {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 45px 0;
 }
 .secbtn .btn {
   font-family: "Roboto";
@@ -176,6 +187,8 @@ header img {
 
 /********** Footer **********/
 footer {
+  position: absolute;
+  top: 1465px;
   background-color: #353535;
   padding: 22px 25px;
   width: 100%;
