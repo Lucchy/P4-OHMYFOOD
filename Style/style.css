@@ -49,9 +49,10 @@ body a {
           animation: stop 3s linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  opacity: 0;
 }
 .loader-bg .loader {
-  border: 16px solid #F5EDFF;
+  border: 6px solid #F5EDFF;
   width: 100px;
   height: 100px;
   border-top-color: #9356DC;
@@ -66,6 +67,13 @@ body a {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
+.loader-bg .loader i {
+  transform: rotate(0deg);
+  -webkit-animation: spino 3s linear;
+          animation: spino 3s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
 
 @-webkit-keyframes stop {
   0% {
@@ -75,7 +83,7 @@ body a {
     opacity: 1;
   }
   100% {
-    opacity: 0;
+    z-index: -2;
   }
 }
 
@@ -87,7 +95,7 @@ body a {
     opacity: 1;
   }
   100% {
-    opacity: 0;
+    z-index: -2;
   }
 }
 @-webkit-keyframes spin {
@@ -96,7 +104,7 @@ body a {
     opacity: 1;
   }
   99% {
-    transform: rotate(720deg);
+    transform: rotate(1080deg);
     opacity: 1;
     border-top-color: #99E2D0;
     border-bottom-color: #99E2D0;
@@ -111,13 +119,29 @@ body a {
     opacity: 1;
   }
   99% {
-    transform: rotate(720deg);
+    transform: rotate(1080deg);
     opacity: 1;
     border-top-color: #99E2D0;
     border-bottom-color: #99E2D0;
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes spino {
+  0% {
+    transform: rotate(0deg);
+  }
+  99% {
+    transform: rotate(-1080deg);
+  }
+}
+@keyframes spino {
+  0% {
+    transform: rotate(0deg);
+  }
+  99% {
+    transform: rotate(-1080deg);
   }
 }
 /* Header */
@@ -167,10 +191,9 @@ header .paris p {
 
 /* Intro */
 .intro {
-  height: 287px;
   text-align: center;
   background-color: #F6F6F6;
-  padding: 39px 20px 57px 20px;
+  padding: 39px 20px 42px 20px;
 }
 .intro h1 {
   margin: 0 58px 10px 42px;
@@ -307,15 +330,6 @@ header .paris p {
   height: 174px;
   width: 100%;
 }
-.restaurants .container a article .fa-heart {
-  font-weight: 0;
-  color: black;
-  transition: font-weight 900ms, color 900ms;
-}
-.restaurants .container a article .fa-heart:hover {
-  font-weight: bold;
-  color: #FF79DA;
-}
 .restaurants .container a article .card {
   display: flex;
   flex-direction: row;
@@ -330,6 +344,119 @@ header .paris p {
 .restaurants .container a article .card div p {
   font-size: 17px;
   font-weight: 300;
+}
+
+.fa-heart {
+  overflow: hidden;
+}
+.fa-heart .stack {
+  border: solid 1px white;
+  border-radius: 50%;
+  padding: 1px 0px;
+  cursor: pointer;
+  background-color: white;
+}
+.fa-heart .stack:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  -webkit-animation: heart 2s ease-in;
+          animation: heart 2s ease-in;
+}
+
+.heart {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: black;
+  transform: rotate(45deg);
+}
+.heart::before {
+  position: absolute;
+  bottom: 0px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  content: "";
+  border-radius: 50%;
+  background: black;
+}
+.heart::after {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  content: "";
+  border-radius: 50%;
+  background: black;
+  z-index: -2;
+}
+
+.heart2 {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background: white;
+}
+.heart2::before {
+  position: absolute;
+  bottom: 0px;
+  left: -8px;
+  width: 17px;
+  height: 17px;
+  content: "";
+  border-radius: 50%;
+  background: white;
+}
+.heart2::after {
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  width: 17px;
+  height: 17px;
+  content: "";
+  border-radius: 50%;
+  background: white;
+  z-index: -1;
+}
+
+.heart3 {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background: white;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.heart3::before {
+  position: absolute;
+  bottom: 0px;
+  left: -8px;
+  width: 17px;
+  height: 17px;
+  content: "";
+  border-radius: 50%;
+  background: white;
+}
+.heart3::after {
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  width: 17px;
+  height: 17px;
+  content: "";
+  border-radius: 50%;
+  background: white;
+}
+.heart3:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  transform: scale(1.2);
+  opacity: 1;
+}
+.heart3:hover::after {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #FF79DA -5.2%, #9356DC 110.74%);
+}
+.heart3:hover::before {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
 }
 
 /********** Footer **********/

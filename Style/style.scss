@@ -12,6 +12,7 @@ $lightgrey: #D2D2D2;
 $darkWhite: #F6F6F6;
 $lightblack: #353535;
 $gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+$gradient1: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #FF79DA -5.2%,#9356DC 110.74%);
 /***********************************/
 
 * {
@@ -66,36 +67,50 @@ body {
     align-items: center;
     animation: stop 3s linear;
     animation-fill-mode: forwards;
+    opacity: 0;
 
     .loader {
-    border: 16px solid $primary2;
-    width: 100px;
-    height: 100px;
-    border-top-color: $primary;
-    border-bottom-color: $secondary;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotate(0deg);
-    animation: spin 3s linear;
-    animation-fill-mode: forwards;
+        border: 6px solid $primary2;
+        width: 100px;
+        height: 100px;
+        border-top-color: $primary;
+        border-bottom-color: $secondary;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(0deg);
+        animation: spin 3s linear;
+        animation-fill-mode: forwards;
+
+        i {
+            transform: rotate(0deg);
+            animation: spino 3s linear;
+            animation-fill-mode: forwards;
+        }
+
     }
 }
 
 @keyframes stop {
     0%{opacity: 1;}
     99%{opacity: 1;}
-    100% {opacity: 0;}
+    100% {
+    z-index: -2;}
 }
 @keyframes spin {
     0% {transform: rotate(0deg);
     opacity: 1;}
-    99% {transform: rotate(720deg);
+    99% {transform: rotate(1080deg);
     opacity: 1;
-border-top-color: $lightgreen;
-border-bottom-color: $lightgreen;}
+    border-top-color: $lightgreen;
+    border-bottom-color: $lightgreen;}
     100% {opacity: 0;}
+}
+
+@keyframes spino {
+    0% {transform: rotate(0deg);}
+    99% {transform: rotate(-1080deg);}
 }
 
 /* Header */
@@ -152,10 +167,9 @@ header {
 /* Intro */
 
 .intro {
-    height: 287px; 
     text-align: center;
     background-color: $darkWhite;
-    padding: 39px 20px 57px 20px;
+    padding: 39px 20px 42px 20px;
     
     h1 {
         margin: 0 58px 10px 42px ;
@@ -307,17 +321,6 @@ header {
                     width: 100%;
                 }
 
-                .fa-heart {
-                    font-weight: 0;
-                    color: black;
-                    transition: font-weight 900ms, color 900ms;
-                    
-                    &:hover {
-                        font-weight: bold;
-                        color: $secondary
-                    }
-                }
-
                 .card {
                     display: flex;
                     flex-direction: row;
@@ -342,13 +345,139 @@ header {
     }
 }
 
+.fa-heart {
+    overflow: hidden;
+    
+    .stack {
+        border: solid 1px white;
+        border-radius: 50%;
+        padding: 1px 0px;
+        cursor: pointer;
+        background-color: white;
+        
+
+        &:hover {
+            background: $gradient;
+            animation: heart 2s ease-in;
+        }
+    }
+
+} 
+
+.heart {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: black;
+    transform: rotate(45deg);
+
+    &::before {
+        position: absolute;
+        bottom: 0px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        content: '';
+        border-radius: 50%;
+        background: black;
+    }
+
+    &::after {
+        position: absolute;
+        top: -10px;
+        right: 0px;
+        width: 20px;
+        height: 20px;
+        content: '';
+        border-radius: 50%;
+        background: black;
+        z-index: -2;
+    }
+}
+
+.heart2 {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background: white;
+
+    &::before {
+        position: absolute;
+        bottom: 0px;
+        left: -8px;
+        width: 17px;
+        height: 17px;
+        content: '';
+        border-radius: 50%;
+        background: white;  
+    }  
+
+    &::after {
+        position: absolute;
+        top: -8px;
+        right: 0px;
+        width: 17px;
+        height: 17px;
+        content: '';
+        border-radius: 50%;
+        background: white;
+        z-index: -1;
+    }
+    
+}
+
+.heart3 {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background: white;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+
+    &::before {
+        position: absolute;
+        bottom: 0px;
+        left: -8px;
+        width: 17px;
+        height: 17px;
+        content: '';
+        border-radius: 50%;
+        background: white;  
+    }
+
+    &::after {
+        position: absolute;
+        top: -8px;
+        right: 0px;
+        width: 17px;
+        height: 17px;
+        content: '';
+        border-radius: 50%;
+        background: white;
+    }
+
+    &:hover {
+        background: $gradient;
+        transform: scale(1.2);
+        opacity: 1;
+
+        &::after {
+            background: $gradient1;  
+        }
+        
+        &::before {
+            background: $gradient;
+        }
+    }
+
+
+}
 
 /********** Footer **********/
 footer {
     background-color: $lightblack;
     padding: 22px 25px;
     
-
     .shrikhand {
         font-family: 'Shrikhand';
         margin-bottom: 9px;
