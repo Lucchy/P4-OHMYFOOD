@@ -11,7 +11,8 @@ $grey:#EAEAEA;
 $lightgrey: #D2D2D2;
 $darkWhite: #F6F6F6;
 $lightblack: #353535;
-$gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #FF79DA -5.2%, #9356DC  110.74%);
+$gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA  110.74%);
+$gradient1: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #FF79DA -5.2%,#9356DC 110.74%);
 /***********************************/
 
 * {
@@ -67,7 +68,6 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     width: 100%;
     height: 63px;
@@ -90,8 +90,6 @@ header {
 .bg {
     height: 275px;
     width: 100%;
-    position: absolute;
-    top:63px;
     background-position: center;
     object-fit: cover;
     z-index: -1;
@@ -100,12 +98,10 @@ header {
 
 
 .menu {
-    position: absolute;
-    top: 283px;
-    width: 100%;
     background-color: $darkWhite;
+    position: relative;
     border-radius: 40px 40px 0px 0px;
-    
+    margin-top: -55px;
 
     .title {
         padding: 32px 40px 2px 17px;
@@ -114,24 +110,12 @@ header {
         align-items: center;
         justify-content: space-between;
 
-        .fa-heart {
-            font-weight: 0;
-            color: black;
-            transition: font-weight 900ms, color 900ms;
-            
-            &:hover {
-                font-weight: bold;
-                color: $primary;
-            }
-        }
     }
     
     .container {
         width: 100%;
         padding: 0 13px;
         margin-top: 40px;
-
-
 
         .dish {
             display: flex;
@@ -140,8 +124,8 @@ header {
             cursor: pointer;
             position: relative;
             overflow: hidden;
-
-
+            border-radius: 15px;
+            
 
             .card {
                 width: 100%;
@@ -157,9 +141,9 @@ header {
                 .card-txt {
                     width: 100%;
                     
-
                     .sub {
                         width: 100%;
+                        margin-top: 7px;
                         display: flex;
                         flex-direction: row;
                         align-items: center;
@@ -176,9 +160,11 @@ header {
     
             .coche {
                 background-color: $lightgreen;
+                display: flex;
+                align-items: center;
                 position: absolute;
                 right: -60px;
-                height: 69px;
+                height: 80px;
                 padding: 25px 15px;
                 margin-top: 14px;
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -208,8 +194,142 @@ header {
     } 
 }
 
+.entree {
+    opacity: 0;
+    animation: fade 1s ease-in;
+    animation-fill-mode: forwards;
+}
+.plats {
+    opacity: 0;
+    animation: fade 1s ease-in 1s;
+    animation-fill-mode: forwards;
+}
+.dessert {
+    opacity: 0;
+    animation: fade 1s ease-in 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
 
 
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.heart {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: black;
+    transform: rotate(45deg);
+
+    &::before {
+        position: absolute;
+        bottom: 0px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        content: '';
+        border-radius: 50%;
+        background: black;
+    }
+
+    &::after {
+        position: absolute;
+        top: -10px;
+        right: 0px;
+        width: 20px;
+        height: 20px;
+        content: '';
+        border-radius: 50%;
+        background: black;
+        z-index: -2;
+    }
+}
+
+.heart2 {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background: white;
+
+    &::before {
+        position: absolute;
+        bottom: 0px;
+        left: -8px;
+        width: 17px;
+        height: 17px;
+        content: '';
+        border-radius: 50%;
+        background: white;  
+    }  
+
+    &::after {
+        position: absolute;
+        top: -8px;
+        right: 0px;
+        width: 17px;
+        height: 17px;
+        content: '';
+        border-radius: 50%;
+        background: white;
+        z-index: -1;
+    }
+    
+}
+
+.heart3 {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background: white;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+
+    &::before {
+        position: absolute;
+        bottom: 0px;
+        left: -8px;
+        width: 17px;
+        height: 17px;
+        content: '';
+        border-radius: 50%;
+        background: white;  
+    }
+
+    &::after {
+        position: absolute;
+        top: -8px;
+        right: 0px;
+        width: 17px;
+        height: 17px;
+        content: '';
+        border-radius: 50%;
+        background: white;
+    }
+
+    &:hover {
+        background: $gradient;
+        transform: scale(1.2);
+        opacity: 1;
+
+        &::after {
+            background: $gradient1;  
+        }
+        
+        &::before {
+            background: $gradient;
+        }
+    }
+
+
+}
 
 /************ Main ************/
 .test {
@@ -237,7 +357,7 @@ header {
         border-radius: 25px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, .5);
         border: none;
-        background: $gradient;
+        background: $gradient1;
 
        &:hover {
         background: linear-gradient(200.64deg, #FF79DA -5.2%, #9356DC  110.74%);
@@ -250,14 +370,13 @@ header {
 
 /********** Footer **********/
 footer {
-    position: absolute;
-    top: 1465px;
     background-color: $lightblack;
     padding: 22px 25px;
     width: 100%;
 
+    
     .shrikhand {
-        font-family:'Shrikhand';
+        font-family: 'Shrikhand';
         margin-bottom: 9px;
         color:white;
         font-weight: 400;
@@ -267,6 +386,7 @@ footer {
     div {
         display: flex;
         flex-direction: column; 
+        width: 100%;
         
 
         a {
@@ -279,30 +399,33 @@ footer {
 
 /************ mixin & functions ******************/
 
-@media  screen and (min-width: 1000px) {
+@media  screen and (min-width: 992px) {
 
-    .ctn {
-        max-width: 1400px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+    .menu {
+    max-width: 1000px;
+    padding: 51px 210px;
+    margin-left: auto;
+    margin-right: auto;
     }
 
-
-    
     footer {
         display: flex;
         flex-direction: row-reverse;  
         padding: 40px 80px;
 
+        .ctn {
+            max-width: 1400px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
         
-       
-        div {
-            flex-direction: row;
-            padding-right: 70px;
-
-            a {
+            div {
+                flex-direction: row;
                 padding-right: 70px;
+
+                a {
+                    padding-right: 70px;
+                }
             }
         }
     }
