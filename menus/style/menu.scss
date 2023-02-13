@@ -82,6 +82,7 @@ header {
     }
 
     img {
+        margin: auto 0px;
         height: 30px;
         width: 162px;
     }
@@ -328,7 +329,6 @@ header {
         }
     }
 
-
 }
 
 /************ Main ************/
@@ -338,7 +338,6 @@ header {
 
 .testt {
     background-color:#89C8FA;
-
 }
 
 .secbtn {
@@ -364,7 +363,6 @@ header {
             box-shadow: 0px 5px 15px rgba(0,0,0, 0.5);
         }
     }
-
 }
 
 
@@ -372,8 +370,6 @@ header {
 footer {
     background-color: $lightblack;
     padding: 22px 25px;
-    width: 100%;
-
     
     .shrikhand {
         font-family: 'Shrikhand';
@@ -386,7 +382,6 @@ footer {
     div {
         display: flex;
         flex-direction: column; 
-        width: 100%;
         
 
         a {
@@ -399,7 +394,59 @@ footer {
 
 /************ mixin & functions ******************/
 
+/*Media Tablette*/
+@media screen and (min-width: 763px) {
+
+    .menu {
+        padding-right: 15%;
+        padding-left: 15%;
+
+        .container {
+            .dish {
+                &:hover {
+                    .card {
+                        .card-txt {
+                            .sub {
+                                width: 88%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        .ctn {
+        display: flex;
+        flex-direction: row-reverse;  
+        padding: 40px 80px; 
+        align-items: center;
+        }
+        
+       
+        div {
+            flex-direction: row;
+            padding-right: 10%;
+
+            a {
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+
+/* Media bureau */
 @media  screen and (min-width: 992px) {
+
+    .ctn {
+        max-width: 1400px;
+    }
+
+    .bg {
+        height: 400px;
+    }
 
     .menu {
     max-width: 1000px;
@@ -409,23 +456,20 @@ footer {
     }
 
     footer {
+        .ctn {
         display: flex;
         flex-direction: row-reverse;  
-        padding: 40px 80px;
-
-        .ctn {
-            max-width: 1400px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+        padding: 40px 80px; 
+        align-items: center;
+        }
         
-            div {
-                flex-direction: row;
-                padding-right: 70px;
+       
+        div {
+            flex-direction: row;
+            padding-right: 10%;
 
-                a {
-                    padding-right: 70px;
-                }
+            a {
+                padding-right: 70px;
             }
         }
     }
