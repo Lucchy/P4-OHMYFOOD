@@ -500,7 +500,41 @@ footer {
 }
 
 /************ mixin & functions ******************/
+/*Media Tablette*/
 
+@media screen and (min-width: 763px) {
+    .fonctionnement {
+        padding: 0 10%;
+    }
+    .restaurants {
+        padding:  55px 10%;
+    }
+
+    footer {
+        .ctn {
+        display: flex;
+        flex-direction: row-reverse;  
+        padding: 40px 80px; 
+        align-items: center;
+
+        h3 {
+            margin-top: 10px;
+        }
+        }
+        
+       
+        div {
+            flex-direction: row;
+            padding-right: 10%;
+
+            a {
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+/* Media bureau */
 @media  screen and (min-width: 1000px) {
 
     .ctn {

@@ -359,6 +359,9 @@ footer div a {
     padding: 40px 80px;
     align-items: center;
   }
+  footer .ctn h3 {
+    margin-top: 10px;
+  }
   footer div {
     flex-direction: row;
     padding-right: 10%;
