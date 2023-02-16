@@ -289,9 +289,10 @@ header {
     position: relative;
     width: 18px;
     height: 18px;
-    background: white;
+    background: $gradient;
     opacity: 0;
-    transition: opacity 1s ease-in;
+    transform: scale(1);
+    transition: opacity 1s ease-in, transform 1s ease-out;
 
     &::before {
         position: absolute;
@@ -301,7 +302,7 @@ header {
         height: 17px;
         content: '';
         border-radius: 50%;
-        background: white;  
+        background: $gradient;  
     }
 
     &::after {
@@ -312,11 +313,10 @@ header {
         height: 17px;
         content: '';
         border-radius: 50%;
-        background: white;
+        background: $gradient;
     }
 
     &:hover {
-        background: $gradient;
         transform: scale(1.2);
         opacity: 1;
 
@@ -328,6 +328,7 @@ header {
             background: $gradient;
         }
     }
+
 
 }
 

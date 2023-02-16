@@ -239,9 +239,10 @@ header img {
   position: relative;
   width: 18px;
   height: 18px;
-  background: white;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transform: scale(1);
+  transition: opacity 1s ease-in, transform 1s ease-out;
 }
 .heart3::before {
   position: absolute;
@@ -251,7 +252,7 @@ header img {
   height: 17px;
   content: "";
   border-radius: 50%;
-  background: white;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
 }
 .heart3::after {
   position: absolute;
@@ -261,10 +262,9 @@ header img {
   height: 17px;
   content: "";
   border-radius: 50%;
-  background: white;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
 }
 .heart3:hover {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
   transform: scale(1.2);
   opacity: 1;
 }
