@@ -169,11 +169,13 @@ header .paris p {
   border-radius: 25px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   border: none;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  opacity: 1;
+  transition: opacity 0.7s, box-shadow 0.7s;
 }
 .intro .btn:hover {
-  background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
 }
 
 /* Fonctionnement */
