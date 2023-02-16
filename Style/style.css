@@ -45,11 +45,8 @@ body a {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-animation: stop 3s linear;
-          animation: stop 3s linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  opacity: 0;
+  animation: stop 3s linear;
+  animation-fill-mode: forwards;
 }
 .loader-bg .loader {
   border: 6px solid #F5EDFF;
@@ -62,29 +59,13 @@ body a {
   justify-content: center;
   align-items: center;
   transform: rotate(0deg);
-  -webkit-animation: spin 3s linear;
-          animation: spin 3s linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation: spin 3s linear;
+  animation-fill-mode: forwards;
 }
 .loader-bg .loader i {
   transform: rotate(0deg);
-  -webkit-animation: spino 3s linear;
-          animation: spino 3s linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes stop {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 1;
-  }
-  100% {
-    z-index: -2;
-  }
+  animation: spino 3s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes stop {
@@ -96,21 +77,6 @@ body a {
   }
   100% {
     z-index: -2;
-  }
-}
-@-webkit-keyframes spin {
-  0% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  99% {
-    transform: rotate(1080deg);
-    opacity: 1;
-    border-top-color: #99E2D0;
-    border-bottom-color: #99E2D0;
-  }
-  100% {
-    opacity: 0;
   }
 }
 @keyframes spin {
@@ -126,14 +92,6 @@ body a {
   }
   100% {
     opacity: 0;
-  }
-}
-@-webkit-keyframes spino {
-  0% {
-    transform: rotate(0deg);
-  }
-  99% {
-    transform: rotate(-1080deg);
   }
 }
 @keyframes spino {
@@ -358,8 +316,7 @@ header .paris p {
 }
 .fa-heart .stack:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
-  -webkit-animation: heart 2s ease-in;
-          animation: heart 2s ease-in;
+  animation: heart 2s ease-in;
 }
 
 .heart {
@@ -546,4 +503,4 @@ footer div a {
   footer div a {
     padding-right: 70px;
   }
-}/*# sourceMappingURL=Style.css.map */
+}/*# sourceMappingURL=style.css.map */
